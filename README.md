@@ -10,4 +10,4 @@ enjoy!
 
 ## subheader
 
-more changes to come
+more changes to come.
