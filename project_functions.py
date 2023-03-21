@@ -1,6 +1,6 @@
 def get_data() -> list:
     """
-    reads a csv file and returns and creates a dict
+    reads a csv file and creates a dict
     it returns a random item from the dict given a certain range
 
     :return : a list with two elements, the puzzle and the solution
