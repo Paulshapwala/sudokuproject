@@ -1,4 +1,4 @@
-def get_data() -> list:
+def get_data():
     """
     reads a csv file and returns and creates a dict
     it returns a random item from the dict given a certain range
@@ -7,22 +7,21 @@ def get_data() -> list:
     """
     import csv
     import random
-    random_int = random.randint(0, 10)
-    # random_int = 2
-    samples = {}
+    import pandas as pd
+    # random_int = random.randint(2, 10)
+    random_int = 10
     source_path = 'C:/Users/shapz/Downloads/archive/sudoku.csv'
-    with open(source_path) as sudoku:
-        lines = csv.reader(sudoku)
-        i = 0
+    df = pd.read_csv(source_path)
+    df = df.reset_index(drop=True)
+    df.head(random_int)
+    df.dropna()
+    return df.head(random_int)
 
-        for line in lines:
-            samples[i] = line
-            i += 1
-            if i >= random_int + 1:
-                break
 
-    test_sample = samples[random_int]
-    return test_sample
+def random_value():
+    df = get_data()
+    ap = df.reset_index(drop=True)
+    return ap.sample()
 
 
 def display(dict_param, i=1) -> None:
